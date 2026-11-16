@@ -1,0 +1,122 @@
+:root {
+    --bg-fundo: #12100e;
+    --bg-card: #1e1a17;
+    --dourado: #d4af37;
+    --texto: #f0e6d2;
+    --borda: #3d3226;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-fundo);
+    color: var(--texto);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+/* Mobile-First: Layout em coluna única por padrão */
+.topo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--borda);
+    padding-bottom: 1rem;
+}
+
+.topo h1 {
+    color: var(--dourado);
+    font-size: 1.75rem;
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+select, button {
+    padding: 0.85rem;
+    border-radius: 6px;
+    border: 1px solid var(--dourado);
+    font-size: 1rem;
+}
+
+select {
+    background-color: var(--bg-card);
+    color: var(--texto);
+}
+
+button {
+    background-color: var(--dourado);
+    color: var(--bg-fundo);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.grid-aventura {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.card h2 {
+    color: var(--dourado);
+    margin-bottom: 0.75rem;
+}
+
+.card img {
+    width: 100%;               /* Ocupa toda a largura interna do card */
+    height: 250px;             /* Define uma altura fixa padrão para TODAS as imagens */
+    object-fit: contain;       /* Garante que o monstro inteiro apareça sem cortar partes nem distorcer */
+    background-color: #ffffff; /* Fundo branco uniforme para as ilustrações da API */
+    border-radius: 6px;
+    padding: 0.5rem;           /* Dá um respiro interno para o monstro não encostar na borda */
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.profecia {
+    font-style: italic;
+    font-size: 1.15rem;
+    border-left: 3px solid var(--dourado);
+    padding-left: 1rem;
+}
+
+/* Adaptação para Tablets e Desktops (768px ou maior) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .controles {
+        flex-direction: row;
+    }
+
+    select {
+        flex: 2;
+    }
+
+    button {
+        flex: 1;
+    }
+
+    .grid-aventura {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        align-items: start;
+    }
+}
